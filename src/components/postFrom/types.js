@@ -1,0 +1,1 @@
+export const CREATE_POST = "SIMPLE-POST/CREATE";
