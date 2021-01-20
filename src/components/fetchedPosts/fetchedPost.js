@@ -1,3 +1,6 @@
+import { GreenLoader } from "../loader";
+
+
 const FetchedPost = (props) => {
   return (
     <div className="col">
@@ -8,7 +11,8 @@ const FetchedPost = (props) => {
       >
         Load posts
       </button>
-      {props.isLoadPosts && props.posts}
+      {props.showLoader ? <div className="mt-3"><GreenLoader /></div> : null}
+      {props.isLoadedPosts && props.posts}
     </div>
   );
 };

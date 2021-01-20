@@ -1,4 +1,4 @@
-import { FETCH_POSTS, LOAD_POSTS } from "./types.js";
+import { FETCH_POSTS, LOADED_POSTS } from "./types.js";
 
 const initialState = {
   posts: [],
@@ -9,8 +9,8 @@ export const fetchedPostsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_POSTS:
       return { ...state, posts: action.payload };
-    case LOAD_POSTS:
-      return { ...state, isLoadPosts: true };
+    case LOADED_POSTS:
+      return { ...state, isLoadedPosts: true };
     default:
       return state;
   }

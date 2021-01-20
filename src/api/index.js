@@ -1,7 +1,2 @@
-// site https://jsonplaceholder.typicode.com/
-// docs https://github.com/typicode/json-server
-
-export const URL = "https://jsonplaceholder.typicode.com";
-const queryParam = {
-  _limit: Number,
-};
+export { JSON_API_DOMAIN, JSON_API_QUERY_PARAM } from "./const.js";
+export { getJsonPosts } from "./fetchapi.js";

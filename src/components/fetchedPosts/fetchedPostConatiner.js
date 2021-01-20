@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import Post from "../posts/post.js";
 import FetchedPost from "./fetchedPost.js";
 import { fetchPosts } from "./actions.js";
@@ -22,22 +22,26 @@ class fetchedPostConatiner extends React.Component {
       <FetchedPost
         posts={posts}
         handleLoadPosts={this.handleLoadPosts}
-        isLoadPosts={this.props.isLoadPosts}
+        isLoadedPosts={this.props.isLoadedPosts}
+        showLoader={this.props.showLoader}
       />
     );
   }
 }
 
 const mapDispatchToProps = {
-  fetchPosts
-}
+  fetchPosts,
+};
 
 const mapStateToProps = (state) => {
   return {
     posts: state.fetchedPosts.posts,
-    isLoadPosts: state.fetchedPosts.isLoadPosts
+    isLoadedPosts: state.fetchedPosts.isLoadedPosts,
+    showLoader: state.loaderReducer.showLoader,
   };
 };
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(fetchedPostConatiner);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(fetchedPostConatiner);
